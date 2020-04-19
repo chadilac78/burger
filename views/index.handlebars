@@ -1,0 +1,35 @@
+<h1>BURGER ME APP</h1>
+
+<p>CREATE AND DEVOUR BURGERS WITH THIS APP</p>
+
+<!-- Pass in data from server.js -->
+<ul>
+    {{#each burgers}}
+    <li>
+        <p><span class="label">ID:</span> {{this.id}}</p>
+        <p><span class="label">Burger Name:</span> {{this.burger_name}}</p>
+        <p><span class="label">Description:</span> {{this.b_description}}</p>
+
+        <button data-id="{{this.id}}" class="delburger">DEVOUR!!</button>
+
+
+    </li>
+    {{/each}}
+</ul>
+
+<h2>Add a Burger</h2>
+
+<form class="create-form">
+
+    <div class="form-group">
+        <label for="burger">Burger:</label>
+        <input type="text" id="buger_name" name="burger_name">
+    </div>
+
+    <div class="form-group">
+        <label for="description">Description:</label>
+        <textarea id="b_description" name="b_description" rows="8" cols="40"></textarea>
+    </div>
+
+    <button type="submit">Add Burger</button>
+</form>
