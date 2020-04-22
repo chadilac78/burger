@@ -1,7 +1,7 @@
 var burgers = require('C:/Users/chadi/Desktop/burger/models/burger.js');
 var express = require('express');
 var router = express.Router();
-// var orm = require('C:/Users/chadi/Desktop/burger/config/orm.js')
+
 
 router.get("/", function (req, res) {
     burgers.all(function (data) {
@@ -14,20 +14,30 @@ router.get("/", function (req, res) {
 
 
 router.post('/burgers', function (req, res) {
+    console.log(req.body)
     burgers.create([
         'burger_name',
-        'b_description'
+        "b_description"
+
     ], [
-        req.body.burger_name,
-        req.body.b_description
-    ], function (result) {
+        req.body.burger_name, req.body.description
+    ], function (data) {
         res.redirect('/');
-        res.json({ id: result.insertID })
+        console.log(data)
+
 
     });
 });
 
+router.put('/burgers/:id', function (req, res) {
+    var condition = 'id = ' + req.params.id;
 
+    burger.updateOne({
+        devoured: true
+    }, condition, function (data) {
+        res.redirect('/');
+    });
+});
 
 
 
