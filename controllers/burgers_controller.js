@@ -1,4 +1,4 @@
-var burgers = require('C:/Users/chadi/Desktop/burger/models/burger.js');
+var burgers = require('../models/burger.js');
 var express = require('express');
 var router = express.Router();
 
