@@ -1,4 +1,4 @@
-var orm = require('C:/Users/chadi/Desktop/burger/config/orm.js');
+var orm = require('./burger/config/orm.js');
 
 var burgers = {
 
