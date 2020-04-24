@@ -18,5 +18,15 @@ li {
     margin-bottom: 5px;
   }
 
- 
+ h1, h2 {
+   text-align: center;
+ }
+
+ #created_burger {
+   float: left;
+ }
+
+ #devoured_burgers {
+   float: left;
+ }
 
